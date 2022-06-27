@@ -73,10 +73,29 @@ function update(req,res) {
     })
 }
 
+function deletePost(req, res) {
+    Post.findById(req.params.id)
+    .then(post => {
+        if (post.owner.equals(req.user.profile._id)) {
+            post.delete()
+            .then(()=> {
+                res.redirect('/posts')
+            })
+        } else {
+            throw new Error ('Not authorized')
+        }
+    })
+    .catch (err => {
+        console.log(err)
+        res.redirect('/posts')
+    })
+}
+
 export {
     index,
     create,
     show,
     edit,
-    update
+    update,
+    deletePost as delete
 }

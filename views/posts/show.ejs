@@ -8,6 +8,9 @@
         <form action="/posts/<%= post._id %>/edit" method="GET">
             <button class="btn" type="submit">Edit this Post</button>
         </form>
+        <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+            <button class="btn" type="submit">Delete this post</button>
+        </form>
     <% } %>
 </section>
 
