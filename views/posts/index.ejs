@@ -1,0 +1,28 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+    <h1>Posts</h1>
+    <% if (user) { %> 
+        <h2>Add a new post</h2>
+        <form action="/posts" method="POST">
+            <label>
+                Title:
+                <input type="text" name="title" autocomplete="off">
+            </label>
+            <label>
+                Write a post..
+                <input type="text" name="content">
+            </label>
+            <button type="submit">Add a post</button>
+        </form>
+    <% } %>
+    <h2>All posts</h2>
+    <% posts.forEach (post => { %> 
+        <li>
+            <a href="/posts/<%= post._id %>"><%= post.title %></a>
+        </li>
+    <% }) %>
+</section>
+
+<%- include('../partials/footer') %>

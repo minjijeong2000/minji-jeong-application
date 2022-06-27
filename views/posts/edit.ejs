@@ -1,0 +1,19 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+    <h1>Edit this Post</h1>
+    <form action="/posts/<%= post._id %>?method=PUT" method="POST">
+        <label>
+            Title:
+            <input type="text" name="title" value="<%= post.title %>" autocomplete="off">
+        </label>
+        <label>
+            Write a post..
+            <input type="text" name="content">
+        </label>
+        <button type="submit">Edit a post</button>
+    </form>
+</section>
+
+<%- include('../partials/footer') %>
