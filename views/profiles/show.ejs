@@ -22,6 +22,29 @@
       <button type="submit">Add a fact</button>
     </form>
   <% } %>
+  <% if (profile.facts.length)  {%>
+    <h2>
+      <%= isSelf ? "You have" : `${profile.name} has` %> fun facts! Here they are!
+    </h2>
+    <% profile.facts.forEach(fact => { %>
+      <h3>
+        <%= fact.fact %>
+        <% if (isSelf) { %> 
+            <form 
+              action="/profiles/facts/<%= fact._id %>?_method=DELETE" 
+              method="POST"
+              style="display: inline-block;"
+            >
+              <button type="submit">Delete <%= fact.fact %></button>
+            </form>
+            <% } %>
+      </h3>
+    <% }) %>
+  <% } else { %>
+    <h2>
+      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any fun facts.
+    </h2> 
+  <% } %> 
 </main>
 
 <%- include('../partials/footer') %>

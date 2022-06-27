@@ -45,8 +45,24 @@ function createFact(req, res) {
     })
 }
 
+function deleteFact(req, res) {
+    Profile.findById(req.user.profile._id)
+    .then(profile => {
+        profile.facts.remove({_id: req.params.id})
+        profile.save()
+        .then(() => {
+            res.redirect(`/profiles/${req.user.profile._id}`)
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+}
+
 export {
     index,
     show,
-    createFact
+    createFact,
+    deleteFact
 }
