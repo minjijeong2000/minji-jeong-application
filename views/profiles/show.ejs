@@ -1,0 +1,27 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <% if (profile.avatar) { %>
+    <div>
+      <img 
+        class="profile-avatar"
+        src="<%= profile.avatar %>" 
+        alt="<%= profile.name %> avatar"
+      >
+    </div>
+  <% } %>
+  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  <% if (isSelf)  {%> 
+    <h2>Add a fun fact!</h2>
+    <form action="/profiles/<%= profile._id %>/facts" method="POST">
+      <label>
+        Fun fact: 
+        <input type="text" name="fact" autocomplete="off">
+      </label>
+      <button type="submit">Add a fact</button>
+    </form>
+  <% } %>
+</main>
+
+<%- include('../partials/footer') %>
