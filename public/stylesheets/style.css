@@ -33,6 +33,10 @@ nav {
   justify-content: center;
 }
 
+.tab {
+  padding: 5px;
+}
+
 main {
   display: flex;
   align-items: center;
@@ -42,4 +46,14 @@ main {
 
 h1 {
   font-size: 3.6rem;
+  color: rgb(4, 4, 4);
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px rgb(160, 160, 160),
+      0 0 42px #eac1e8,
+      0 0 82px #eac1e8,
+      0 0 92px #eac1e8,
+      0 0 102px #eac1e8,
+      0 0 151px #eac1e8;
 }
