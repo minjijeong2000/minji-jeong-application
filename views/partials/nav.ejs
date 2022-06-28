@@ -4,11 +4,12 @@
 </head>
 <body>
   <nav>
+    <a href="/"><img src="../images/main/Ironman.png" height="50" id="icon"></a>
     <a href="/posts" class="tab">Posts</a>
     <a href="/profiles" class="tab">Profile</a>
     <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
+      <a href="/auth/logout" id="logOut">
+        Logout
       </a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
