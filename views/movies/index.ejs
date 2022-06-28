@@ -1,0 +1,11 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>Lists of MCU Movies!</h1>
+  <% values.forEach(value => { %> 
+    <h2><%= value.title %> </h2>
+    <% }) %> 
+</main>
+
+<%- include('../partials/footer') %>
