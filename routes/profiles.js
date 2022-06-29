@@ -10,6 +10,8 @@ router.get('/:id', isLoggedIn, profilesCtrl.show)
 
 router.post('/:id/facts', isLoggedIn, profilesCtrl.createFact)
 
+router.post('/addMovie', profilesCtrl.addMovie)
+
 router.delete('/facts/:id', isLoggedIn, profilesCtrl.deleteFact)
 
 export {

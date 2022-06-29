@@ -60,9 +60,21 @@ function deleteFact(req, res) {
     })
 }
 
+function addMovie(req, res) {
+    Profile.findById(req.user.profile._id)
+    .then(profile => {
+        profile.movies.push(req.body)
+        profile.save()
+        .then(()=> {
+            res.redirect('/')
+        })
+    })
+}
+
 export {
     index,
     show,
     createFact,
-    deleteFact
+    deleteFact,
+    addMovie
 }

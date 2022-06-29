@@ -5,7 +5,14 @@
   <h1>Lists of MCU Movies!</h1>
   <% values.forEach(value => { %> 
     <h2><%= value.title %> </h2>
-    <img src="https://www.themoviedb.org/t/p/original<%= value.poster_path %>" alt="">
+    <img src="https://www.themoviedb.org/t/p/original<%= value.poster_path %>" alt="" height="500">
+    <form action="/profiles/addMovie" method="POST">
+      <input hidden name="title" value="<%= value.title %>" type="text">
+      <input hidden name="image" value="https://www.themoviedb.org/t/p/original<%= value.poster_path %>" type="text">
+      <input hidden name="overview" value="<%= value.overview %>" type="text">
+      <input hidden name="release_date" value="<%= value.release_date %>" type="text">
+      <button type="submit">Add to my watch-list!</button>
+    </form>
     <% }) %> 
 </main>
 
