@@ -7,6 +7,9 @@ import session from 'express-session'
 import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
+import multer from 'multer'
+import fs from 'fs'
+import bodyParser from 'body-parser'
 import { passUserToView } from './middleware/middleware.js'
 
 // connect to MongoDB with mongoose
@@ -33,6 +36,7 @@ app.set(
 app.set('view engine', 'ejs')
 
 // middleware
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 app.use(logger('dev'))
 app.use(express.json())

@@ -6,6 +6,10 @@ const router = Router()
 
 router.get('/', moviesCtrl.index)
 
+// router.patch(':id/addWatchList', isLoggedIn, moviesCtrl.addWatchList)
+
+router.get('/:id', isLoggedIn, moviesCtrl.show)
+
 export {
   router
 }

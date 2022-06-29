@@ -5,7 +5,8 @@ const Schema = mongoose.Schema
 const postSchema =new Schema({
     title: String,
     content: String,
-    owner: {type: Schema.Types.ObjectId, ref:'Profile'}
+    owner: {type: Schema.Types.ObjectId, ref:'Profile'},
+
 }, {
     timestamps: true
 })
