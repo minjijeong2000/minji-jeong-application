@@ -1,6 +1,6 @@
 # minji-jeong-application
 
-![](../images/main/my-app-minji.png)
+![](public/images/main/my-app-minji.png)
 
 
 This CRUD application has a marvel theme with pages including home, posts, MCU movies, and google oauth. Users can log into their google account and able to add in the posts of their favorite marvel characters, edit, and delete it. Also, this app implemented an API, so users can view lists of MCU movies. Fianlly, whenever users go into their profile, they can add some fun facts about themselves!
