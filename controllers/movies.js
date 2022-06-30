@@ -1,4 +1,4 @@
-import { Profile } from "../models/profile.js"
+import {Movie} from '../models/movie.js'
 import axios from 'axios'
 import { addMovie } from "./profiles.js"
 
@@ -23,14 +23,21 @@ function index(req, res) {
 // }
 
 function show(req, res) {
-    Movie.findById(req.params.id)
-    .then(movie => {
+    axios.get(`https://api.themoviedb.org/3/keyword/180547/movies?api_key=${process.env.API_KEY}&language=en-US&include_adult=false`)
+    .then(response => {
+        Movie.findOne({ id: response.data.id })
+    // This is where we'll populate collectedBy
+    // This is where we'll deep-populate reviews
+    .then((movie)=> {
+      res.render("movies/show", {
+        title: "Movie Details",
+        movie,
+        values: response.data.results
         // const isSelf = profile._id.equals(req.user.profile._id)
-        res.render('movies/show', {
-            movie,
-            // isSelf
+        
         })
     })
+})
     .catch((err) => {
         console.log(err)
         res.redirect('/')

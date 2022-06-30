@@ -3,10 +3,15 @@
 
 <main>
   <h1>Lists of MCU Movies!</h1>
-  <% values.forEach(value => { %> 
-    <h2><%= value.title %> </h2>
-    <img src="https://www.themoviedb.org/t/p/original<%= value.poster_path %>" alt="" height="500">
+  <% values.forEach(movie => { %> 
+    <h2><%= movie.title %> </h2>
+    <h2><%= movie.id %></h2>
+    <a href="/movies/<%= movie.id %>">
+    <img src="https://www.themoviedb.org/t/p/original<%= movie.poster_path %>" alt="" height="500">
+    </a>
+    
     <% }) %> 
+   
 </main>
 
 <%- include('../partials/footer') %>

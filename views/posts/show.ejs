@@ -4,8 +4,10 @@
 <section>
     <p>Written by <%= post.owner.name %>...</p>
     <h1><%= post.title %></h1>
+    <h2><%= post.content %></h2>
+    <%= getRandomCat() %> 
     <% if (post.owner.equals(user?.profile._id)) {%> 
-        <form action="/posts/<%= post._id %>/edit" method="GET">
+        <form action="/posts/<%= post._id %>/edit" method="POST">
             <button class="btn" type="submit">Edit this Post</button>
         </form>
         <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
@@ -13,5 +15,12 @@
         </form>
     <% } %>
 </section>
+
+<% function getRandomCat() { %>
+    <div id="marvel"></div>
+    <% let cats = ['GOG.jpg'] %>
+    <% let image = cats[Math.floor(Math.random() * cats.length)] %>
+    <img src="../images/main/<% image %>">
+  <% } %>
 
 <%- include('../partials/footer') %>

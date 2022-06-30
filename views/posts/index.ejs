@@ -1,17 +1,17 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<section>
+<section class="post">
     <h1>Posts</h1>
     <% if (user) { %> 
-        <h2>Post your favorite marvel GIF and share!</h2>
+        <h2>Who is your favorite Marvel character and why? Share!</h2>
         <form action="/posts" method="POST">
             <label>
-                Title:
-                <input type="text" name="title" autocomplete="off">
+                My Favorite Character:
+                <input type="text" name="title" autocomplete="off" id="title">
             </label>
             <label>
-                Write a post..
+                Why I like this character..
                 <input type="text" name="content">
             </label>
             <button type="submit">Add a post</button>
