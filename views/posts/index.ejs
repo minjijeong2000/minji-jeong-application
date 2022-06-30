@@ -2,24 +2,24 @@
 <%- include('../partials/nav') %>
 
 <section class="post">
-    <h1>Posts</h1>
+    <h1 id="postTitle">Posts</h1>
     <% if (user) { %> 
-        <h2>Who is your favorite Marvel character and why? Share!</h2>
+        <h2 id="who">Who is your favorite Marvel character and why? Share!</h2>
         <form action="/posts" method="POST">
             <label>
-                My Favorite Character:
+               <div id="postBar"> My Favorite Character: </div>
                 <input type="text" name="title" autocomplete="off" id="title">
             </label>
             <label>
-                Why I like this character..
-                <input type="text" name="content">
+                <div id="postBar">Why I like this character..</div>
+                <input type="text" name="content" autocomplete="off">
             </label>
             <button type="submit">Add a post</button>
         </form>
     <% } %>
-    <h2>All posts</h2>
+    <h2 class="allPost">All posts</h2>
     <% posts.forEach (post => { %> 
-        <li>
+        <li class="allPost">
             <a href="/posts/<%= post._id %>"><%= post.title %></a>
         </li>
     <% }) %>
