@@ -4,14 +4,14 @@
 <section class="post">
     <h1 id="postTitle">Posts</h1>
     <% if (user) { %> 
-        <h2 id="who">Who is your favorite Marvel character and why? Share!</h2>
+        <h2 class="who">Who is your favorite Marvel character and why? Share!</h2>
         <form action="/posts" method="POST">
             <label>
-               <div id="postBar"> My Favorite Character: </div>
+               <div class="postBar"> My Favorite Character: </div>
                 <input type="text" name="title" autocomplete="off" id="title">
             </label>
             <label>
-                <div id="postBar">Why I like this character..</div>
+                <div class="postBar">Why I like this character..</div>
                 <input type="text" name="content" autocomplete="off">
             </label>
             <button type="submit">Add a post</button>

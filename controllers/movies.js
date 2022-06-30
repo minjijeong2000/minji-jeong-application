@@ -26,8 +26,6 @@ function show(req, res) {
     axios.get(`https://api.themoviedb.org/3/keyword/180547/movies?api_key=${process.env.API_KEY}&language=en-US&include_adult=false`)
     .then(response => {
         Movie.findOne({ id: response.data.id })
-    // This is where we'll populate collectedBy
-    // This is where we'll deep-populate reviews
     .then((movie)=> {
       res.render("movies/show", {
         title: "Movie Details",

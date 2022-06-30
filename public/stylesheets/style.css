@@ -44,6 +44,11 @@ nav {
   padding: 5px;
   font-size: 20px;
   margin: 5px;
+  color: blue;
+}
+
+.tab:hover {
+  color: rgb(73, 146, 223);
 }
 
 main {
@@ -110,7 +115,7 @@ input[type=text] {
   flex-direction: column;
 }
 
-#postBar {
+.postBar {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,7 +129,7 @@ input[type=text] {
   font-size: 45px;
 }
 
-#who {
+.who {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,4 +138,12 @@ input[type=text] {
 
 .allPost {
   font-size: 20px;
+}
+
+.movie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin:30px;
 }

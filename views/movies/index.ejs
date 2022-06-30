@@ -4,10 +4,11 @@
 <main>
   <h1>Lists of MCU Movies!</h1>
   <% values.forEach(movie => { %> 
-    <h2><%= movie.title %> </h2>
-    <h2><%= movie.id %></h2>
-    <a href="/movies/<%= movie.id %>">
+    <h2 class="movie"><%= movie.title %> </h2>
+    <!-- <a href="/movies/< movie.id %>"> -->
     <img src="https://www.themoviedb.org/t/p/original<%= movie.poster_path %>" alt="" height="500">
+    <h2 class="movie"><%= movie.release_date %> </h2>
+    <h2 class="movie"><%= movie.overview %> </h2>
     </a>
     
     <% }) %> 

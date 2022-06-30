@@ -7,8 +7,10 @@
     <a href="/"><img src="../images/main/Ironman.png" height="50" id="icon"></a>
     <a href="/posts" class="tab">Posts</a>
     <a href="/profiles" class="tab">Profile</a>
+    <a href="/movies" class="tab">MCU Movies</a>
     <% if (user) { %>
-      <a href="/auth/logout" id="logOut">
+      <a href="/auth/logout" 
+     class="tab" id="logOut">
         Logout
       </a>
     <% } else { %>
@@ -18,6 +20,5 @@
         </button>
       </a>
     <% } %>
-    <a href="/movies" class="tab">MCU Movies</a>
     <!-- <a href="/watch-list">My Watch-lists</a> -->
   </nav>

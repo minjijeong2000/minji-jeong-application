@@ -13,9 +13,9 @@
   <% } %>
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf)  {%> 
-    <h2>Add a fun fact!</h2>
+    <h2 class="who">Add a fun fact!</h2>
     <form action="/profiles/<%= profile._id %>/facts" method="POST">
-      <label>
+      <label class="postBar">
         Fun fact: 
         <input type="text" name="fact" autocomplete="off">
       </label>
@@ -23,12 +23,12 @@
     </form>
   <% } %>
   <% if (profile.facts.length)  {%>
-    <h2>
+    <h2 class="postBar">
       <%= isSelf ? "You have" : `${profile.name} has` %> fun facts! Here they are!
     </h2>
     <% profile.facts.forEach(fact => { %>
       <h3>
-        <%= fact.fact %>
+        <div class="postBar"><%= fact.fact %></div>
         <% if (isSelf) { %> 
             <form 
               action="/profiles/facts/<%= fact._id %>?_method=DELETE" 
