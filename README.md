@@ -1,70 +1,37 @@
-# MEN Stack with OAuth Template
+# minji-jeong-application
 
-This is a MEN Stack template that includes OAuth.
+![](images/main/my-app-minji.png)
 
-Use this to go build things! 🚀
 
-## To Use This Template
+This CRUD application has a marvel theme with pages including home, posts, MCU movies, and google oauth. Users can log into their google account and able to add in the posts of their favorite marvel characters, edit, and delete it. Also, this app implemented an API, so users can view lists of MCU movies. Fianlly, whenever users go into their profile, they can add some fun facts about themselves!
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
 
-```bash
-git clone https://github.com/SEI-Remote/men-stack-oauth-template.git <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
+[Click here to go to the website] (https://minji-jeong-marvel-app.herokuapp.com/)
 
-Once you are in the project directory:
+[Click here to go to the Trello planning board] (https://trello.com/b/n2sWLAy9/minji-jeong-app)
 
-```bash
-rm -rf .git
-```
+## Technologies used
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+* MongoDB
+* Mongoose
+* Express
+* Nodejs
+* git
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+## Credits
+* TMDB API
+* WallpaperAccess
 
-Re-initialize a git repository:
+## Recent Changes
 
-```bash
-git init
-```
-Use whatever method you'd like to get your project on GitHub. If you're looking for speed though use the GitHub CLI to create a new project repository on GitHub:
+* Styling my website to make it more cool and pretty
+* Added functionalities for my API
 
-```bash
-gh repo create <name-of-your-app-here> --public --source .
-```
-Check out the docs [here](https://cli.github.com/manual/gh_repo_create) if you want to learn more about this command. 
+## Ice Box
 
-Run npm i to fetch the template's dependencies:
-
-```bash
-npm i
-```
-
-touch a .env file:
-
-```bash
-touch .env
-```
-
-Fill it with the following:
-
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_CALLBACK=http://localhost:3000/auth/google/oauth2callback
-GOOGLE_CLIENT_ID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SESSION_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-Replace the `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_SECRET`, and `SESSION_SECRET` with values that you provide.
-
-Delete this README.md and finally, make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-You're done!
+- [x] My app looks pretty by using CSS
+- [x] Font design
+- [ ] Light/Dark mode
+- [ ] Sound
+- [ ] Users can post their pictures on their post page
+- [ ] Random marvel images pop up whenever users click on the posts
